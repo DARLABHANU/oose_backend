@@ -16,9 +16,13 @@ const app = express();
 // Essentials and security middleware
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:3000"], // Match your frontend origin
+  origin: [
+    'https://projectoose.netlify.app', // <--- your frontend URL
+    'http://localhost:3000'            // for local development
+  ],
   credentials: true
 }));
+
 app.use(morgan("combined"));
 app.use(helmet());
 
